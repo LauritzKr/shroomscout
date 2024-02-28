@@ -38,6 +38,13 @@ export class MarkerService {
     }
   }
 
+  public getTemporaryMarker():L.LatLng|undefined {
+    if(this.map && this.temporaryMarker) {
+      return this.temporaryMarker.getLatLng();
+    }
+    return undefined;
+  }
+
   /**
    * Removes the temporary marker from
    * the map and sets it to null.
@@ -47,6 +54,20 @@ export class MarkerService {
       this.map.removeLayer(this.temporaryMarker);
       this.temporaryMarker = null;
     }
+  }
+
+  public addMarker(latitude:number, longitude:number, mushroom:string) {
+    if (!this.map) return;
+    const marker = L.marker({lat: latitude, lng: longitude} as L.LatLng)
+    .addTo(this.map)
+    .bindTooltip(mushroom, {
+      permanent: false,
+      direction: 'top',
+      offset: L.point(-15, -15),
+    })
+    .openTooltip();
+    
+    this.markers.push(marker);
   }
 
   /**
@@ -59,14 +80,6 @@ export class MarkerService {
     const coords = this.temporaryMarker.getLatLng();
     this.removeTemporaryMarker();
 
-    const marker = L.marker(coords)
-      .addTo(this.map)
-      .bindTooltip(message, {
-        permanent: false,
-        direction: 'top',
-        offset: L.point(-15, -15),
-      })
-      .openTooltip();
-    this.markers.push(marker);
+    this.addMarker(coords.lat, coords.lng, message);
   }
 }

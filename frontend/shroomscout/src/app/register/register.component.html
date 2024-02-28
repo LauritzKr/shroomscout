@@ -2,8 +2,24 @@
   <h2>{{ title }}</h2>
 
   <!-- Name input field -->
-  <mat-form-field>
-    <input matInput placeholder="Name" [(ngModel)]="name" />
+  <mat-form-field appearance="fill">
+    <mat-label>Choose an option</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+    <mat-error *ngIf="myControl.hasError('required')">
+      You must enter a value
+    </mat-error>
+    <mat-error *ngIf="myControl.hasError('minLength')">
+      Minimum 2 characters required
+    </mat-error>
   </mat-form-field>
 
   <!-- Environment drop down list -->
@@ -32,7 +48,7 @@
     mat-raised-button
     color="primary"
     (click)="onRegisterClick()"
-    [disabled]="!name || !selectedEnvironment || !isMarkerPlaced"
+    [disabled]="!nameFormControlIsValid() || !selectedEnvironment || !isMarkerPlaced"
   >
     Register
   </button>
