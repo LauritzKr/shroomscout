@@ -1,55 +1,47 @@
-\documentclass{article}
-
-\usepackage[utf8]{inputenc}
+\documentclass[12pt,a4paper,fancyheader]{scrartcl}
 
 \usepackage[ngerman]{babel}
-
-\usepackage{csquotes}
-
-\usepackage{geometry}
-\newgeometry{left=4cm, top=4cm, bottom=2cm, right=2cm}
-
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=false,
-    linktoc=all,
-    linkcolor=blue,  
-}
-
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
 \usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
 
-\usepackage{subfiles}
+\newcommand\svthema{ShroomScout}
+\newcommand\svperson{Tim Hofmann, Lauritz Kremzow}
+\newcommand\svdatum{\today}
+\newcommand\lvname{Modul: Web Technologie}
+\newcommand\lvtyp{WS 2023}
+\newcommand\lvinst{FOM Hochschule für Oekonomie \& Management}
 
-\title{Shroomscout}                                                    
-\author{Lauritz Kremzow, Tim Hofmann}
-\date{\today}
-
+\hypersetup{
+pdftitle={Seminararbeit zum Thema: \svthema} 
+pdfauthor={\svperson}
+}	
+	
 \begin{document}
 
-\begin{titlepage}
-	\maketitle
-\end{titlepage}
+\title{ \huge\textbf{\svthema} }
+\author{ \textsl{\svperson} \\ \svdatum }
+\date{ \normalsize \centering \includegraphics[width=0.3\textwidth]{abbildungen/FOM.jpg}\\\textsc{"`\lvname"'} \\ {\lvtyp} · {\lvinst} }
 
+\maketitle
+\thispagestyle{empty}
+\pagenumbering{Roman}
+
+\cleardoublepage
 \tableofcontents
+\cleardoublepage
+\listoffigures
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{4}
 
-\newpage
-
-\section{Einleitung}
-\subfile{kapitel/1_einleitung}
-
-\section{Anforderungsanalyse}
-\subfile{kapitel/2_anforderungsanalyse}
-
-\section{Entwurfsphase}
-\subfile{kapitel/3_entwurfsphase}
-
-\section{Eingesetzter Technologiestack}
-\subfile{kapitel/4_technologiestack}
-
-\section{Projektmanagement \& Implementierung}
-\subfile{kapitel/5_projektmanagement_implementierung}
-
-\section{Fazit}
-\subfile{kapitel/6_fazit}
+\input{kapitel/1_einleitung.tex}
+\input{kapitel/2_anforderungsanalyse.tex}
+\input{kapitel/3_entwurfsphase.tex}
+\input{kapitel/4_technologiestack.tex}
+\input{kapitel/5_projektmanagement_implementierung.tex}
+\input{kapitel/6_fazit.tex}
 
 \end{document}
