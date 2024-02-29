@@ -152,11 +152,11 @@ Zwischen diesen Komponenten müssen an mehreren Stellen Daten ausgetauscht werde
 	      auch dieser Service essentiell, um das Zusammenspiel zwischen der Karten- und Eingabemaskenkomponente zu ermöglichen.
 
 	\item \textbf{Shroom Service:}
-	      ...
+	      Der Shroom Service bildet die Schnittstelle zwischen Frontend und Backend. Er nutzt Angulars Http Client, um über Http Anfragen an eine spezifizierte
+	      Route zusenden, auf welche der Backend Server konfiguriert ist. So können Pilzdaten eingeholt, als auch für das Eintragen gesendet werden. Der Service
+	      arbeitet ebenfalls mit den erwähnten Observables, da diese ideal für den Umgang mit sich asynchron verändernden Daten sind.
 
 \end{itemize}
-
-\subsubsection{Backend Kommunikation}
 
 \subsubsection{Responsive Design}
 
