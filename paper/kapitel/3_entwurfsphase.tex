@@ -6,16 +6,24 @@
 
 \subsection{Systemarchitektur} % Tim
 
+Die Systemarchitektur ist der konzeptionellen Rahmen, der die Struktur, das Verhalten und die weiteren Ansichten eines Systems definiert. 
+Sie umfasst die Organisation von Systemkomponenten, die Datenflüsse zwischen diesen Komponenten und die Prinzipien, die das Design und die Evolution des Systems leiten. Eine gut definierte Systemarchitektur erleichtert die Verständlichkeit eines komplexen Systems, indem sie dessen Komponenten und deren Interaktionen klar darstellt, was für die Entwicklung, das Management und die Wartung von IT-Systemen entscheidend ist.
+
+Die Architektur eines Systems in der IT ist somit nicht nur eine Beschreibung seiner aktuellen Konfiguration, sondern auch ein Leitfaden für seine zukünftige Entwicklung und Skalierung. Sie berücksichtigt sowohl technische als auch geschäftliche Anforderungen, um sicherzustellen, dass das System effektiv auf die Bedürfnisse seiner Benutzer und Stakeholder reagiert. Durch den Einsatz von Architekturmuster und -prinzipien, wie z.B. Modularität, Wiederverwendbarkeit, und Skalierbarkeit, unterstützt die Systemarchitektur die Schaffung von IT-Lösungen, die sowohl leistungsfähig als auch anpassungsfähig sind.
+
 \subsubsection{Architekturmuster}
 
 Die Software folgt dem Architekturmuster der Client-Server-Architektur. In diesem Architekturmuster wird lediglich zwischen zwei Komponenten entschieden, dem Frontend und dem Backend, Server und Client.
-
+Das Frontend dient dem visualieren der Daten sowie der Dateneingabe durch den User, es kommuniziert mit dem Backend durch HTTP Requests.
+Das Backend verarbeitet die Anfragen die es aus dem Frontend bekommt und regelt den Datenbankzugriff.
 
 \subsubsection{Entscheidungsfindung \& spezifische Auswahl}
 
 Die Wahl fiel auf die Client-Server Architektur, da Sie die simpleste Wahl für unser Projekt und ein de facto Standard für Webanwendungen ist.
 
 \subsection{Datenbankdesign} % Tim
+
+
 
 \subsubsection{Datenmodell}
 
@@ -31,10 +39,14 @@ Diese bieten eine bessere Skalierbarkeit, erweiterte Funktionen sowie eine über
 
 \subsection{Backend-Design} % Tim
 
+Das Backend Design ist unter im Sinne der Übersichtlichkeit und Wartbarkeit modular gestaltet, es gibt eine Hauptdatei,
+welche die ASGI startet und die Routen beinhaltet und jeweils Funktionen aus anderen Dateien aufruft. Diese Funktionen greifen
+dann individuell auf die Datenbank zu und liefern die angeforderten Daten aus und schreiben die übergebenen Daten in die Datenbank.
 
 \subsubsection{Backend-Framework Entscheidung}
 
-Im Backend nutzen wir die Frameworks FastAPI und Uvicorn.
+In der Frage des Backend Frameworks setzte sich die Kombination aus Uvicorn und FastAPI gegen bekanntere featurreichere Python Frameworks wie Django oder Flask durch.
+Diese Entscheiung gründet primär darin, dass FastAPI und Uvicorn sehr minimal, leicht zu verwenden und genau auf unseren Anwendungsfall zugeschnitten sind.
 
 \subsection{GUI-Design \& Frontend-Frameworks}
 
