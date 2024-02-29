@@ -1,9 +1,46 @@
 \documentclass[../main.tex]{subfiles}
 %1000 Worte, Tim
 \begin{document}
-\subsection{Anforderungskonformitaet der Applikation}
+\subsection{Anforderungskonformität der Applikation}
 \subsection{Ausblick auf zukuenftige Entwicklungen}
-Wie effektiv jede Software wird auch unsere Software nie wirklich fertig sein. 
-Würde Entwicklung weitergeführt gäbe es einige unmittelbare Optimierungspotenziale
+Die Entwicklung einer Software ist nie endgültig abgeschlossen, es existieren stets Optimierungspotentiale und potentielle weitere Features.
+Würde die Entwicklung von Shroomscout unmittelbar weitergeführt werden, wären die folgenden Punkte die unmittelbaren Verbesserungspotenziale
+
+\begin{itemize}
+
+    \item \textbf{Performanteres Datenbanksystem}
+        Die Verwendung eines performanteren serverbasierten Datenbanksystem bildet das Fundament für weitere Optimierungen, da die aktuelle Lösung nicht für userintensive
+        Produktivanwendungen ausgelegt ist und daher bei der Skalierung der Software schnell zum Flaschenhals werden würde. Der Migrationsaufwand auf ein System wie MySQL oder PostgreSQL
+        wäre, des Weiterem mit verhältnismäßig geringem Aufwand verbunden, da solange die Tabellenstruktur übernommen wird, die nötigen Anpassungen am Code verhältnismäßig klein sind. 
+
+	\item \textbf{Containerrisierung \& Microservices}
+	    Die Software folgt aktuell dem Server-Client-Muster und ist darauf ausgelegt unmittelbar auf einem System zu Laufen.
+        Zur Erleichterung des Deployments und Erhöhung der Skalierbarkeit, ist es sinnvoll Container Virtualisierungslösungen, wie beispielsweise Docker oder Podman zu nutzen.
+        In diesem Rahmen wäre ebenfalls eine Anpassung der Systemarchitektur hin zu Microservices sinnvoll, bei diesem Ansatz wird die Applikation in viele Microservices aufgespalten,
+        die jeweils eine oder wenige Aufgaben erfüllen und unabhängig von einander laufen. Die Vorteile dieses Architekturansatz liegt ebenfalls in der erhöhten Skalierbarkeit, jedoch
+        bietet er auch erleichterte Fehlerfindung durch getrennt laufende Services, die individuell getestet werden können.
+        
+  \item \textbf{Implementierung von Validierungen}
+        Eine wichtige Optimierung im Hinblick auf die Sicherheit der Applikation ist die Implementierungen von Validierungen für User Input und Anfragen an das Backend.
+        Die aktuellen Validierungen, verhindern nur eine versehentliche eingabe ungültiger Werte durch den Nutzer und SQLinjection Attacken. Anfragen das Backend hingegen werden
+        im Moment nicht validiert, was potentiell zu Sicherheitslücken führen kann. Die Implementierung dieser Validierungen ist mit verhältnismäßig geringem Aufwand verbunden,
+        es besteht jedoch das Risiko, dass nicht alle Fälle abgedeckt werden.
+
+    \item \textbf{Usersystem}
+        
+
+  \item \textbf{Reimplementierung des Backendcodes}
+        Der Live-Feed besteht aus einer Angular Material Card (`<mat-card>'). Angular Material ist eine Bibliothek an vorgefertigten GUI-Komponenten,
+        welche bereits ansprechend aussehen. Diese wurden überall, wo es möglich war, verwendet, um sich nicht mehr um das CSS-Styling kümmern zu müssen.
+        In der Komponente werden Nachrichten dargestellt, welche sie vom Message Service erhält. Das tut sie, indem sie mithilfe der async-Pipe (`| async') 
+        das Nachrichten-Observable abonniert und somit über Änderungen automatisch informiert wird. 
+
+  \item \textbf{Eingabemaske:}
+        Die Eingabemaske besteht ebenfalls aus Angular Material Komponenten für die entsprechenden Eingabefelder und das Drop-Down-Menü. Außerdem wird
+        hier beim Eintragen eines Pilzes zum Einen der Marker Service zum persistieren des Markers und der Message Service zum Absenden einer neuen 
+        Nachricht an den Live-Feed genutzt.
+
+\end{itemize}
+
 
 \end{document}
