@@ -20,17 +20,16 @@ Die Wahl fiel auf die Client-Server Architektur, da Sie die simpleste Wahl für 
 \subsubsection{Datenmodell}
 
 \subsubsection{Datenbanksystemauswahl}
-Im Rahmen der Entscheidungsfindung für ein adäquates Datenbanksystem für unser Projekt fiel die Wahl auf SQLite. 
-Diese Präferenz gründet auf der signifikanten Vereinfachung der Kollaborationsprozesse durch Git. Der fundamentale Vorteil von SQLite besteht darin, dass es Datenbanken als einzelne Dateien speichert, welche mühelos in ein Git-Repository integriert werden können. 
+Im Rahmen der Entscheidungsfindung für ein adäquates Datenbanksystem für unser Projekt fiel die Wahl auf SQLite.
+Diese Präferenz gründet auf der signifikanten Vereinfachung der Kollaborationsprozesse durch Git. Der fundamentale Vorteil von SQLite besteht darin, dass es Datenbanken als einzelne Dateien speichert, welche mühelos in ein Git-Repository integriert werden können.
 Dies ermöglicht es allen Projektbeteiligten, synchron auf denselben Datenbestand zuzugreifen, ohne dass die Notwendigkeit für eine zusätzliche Infrastruktur besteht.
 
 Im Vergleich zu umfangreicheren und funktionsreicheren Datenbanksystemen wie PostgreSQL oder MySQL, welche den Betrieb auf einem externen Server erfordern, erschien SQLite für das gegenwärtige Entwicklungsstadium und die Skalierung unseres Projekts als die effizientere Lösung. Der Einsatz solcher Datenbanksysteme hätte in dieser Phase lediglich einen erhöhten Aufwand mit sich gebracht, ohne dass der Mehrwert im Einklang mit den aktuellen Anforderungen gestanden hätte.
 
-Es ist jedoch anzumerken, dass für einen potenziellen produktiven Einsatz der Software, insbesondere bei einer umfangreichen Nutzerbasis, Datenbanksysteme wie PostgreSQL oder MySQL bevorzugt werden sollten. 
+Es ist jedoch anzumerken, dass für einen potenziellen produktiven Einsatz der Software, insbesondere bei einer umfangreichen Nutzerbasis, Datenbanksysteme wie PostgreSQL oder MySQL bevorzugt werden sollten.
 Diese bieten eine bessere Skalierbarkeit, erweiterte Funktionen sowie eine überlegene Performance, welche für die Bewältigung größerer Datenmengen und eine intensivere Nutzerinteraktion unabdingbar sind.
 
 \subsection{Backend-Design} % Tim
-
 
 
 \subsubsection{Backend-Framework Entscheidung}
@@ -47,10 +46,11 @@ die Karte und den Live Feed umfasste, und wurde später um die Eingabeseite für
 konzeptionelle Phase erfolgte in einer gemeinsamen Brainstorming-Session, in der Ideen frei ausgetauscht und Entwürfe
 entwickelt und verglichen wurden.
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{../abbildungen/GUI_Entwurf_Drawio.jpg}
-	\caption{Das Ergebnis des GUI Designs.}\label{fig:GUI_Entwurf}
+	\includegraphics[width=\textwidth]{abbildungen/GuiEntwurfDrawio.jpg}
+	\caption{Das Ergebnis des GUI Designs.}
+	\label{fig:GUI_Entwurf}
 \end{figure}
 
 Nicht-funktionale Anforderungen wie Einfachheit, Benutzerfreundlichkeit und Responsive Design waren hierbei maßgebliche
