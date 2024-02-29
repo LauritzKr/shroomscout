@@ -3,7 +3,35 @@
 \begin{document}
 \subsection{Anforderungskonformität der Applikation}
 Das wichtigste Kriterium für gute Software ist Anforderungskonformität, im folgenden werden die Anforderungen den Ergebnissen gegenübergestellt:
+
 \subsubsection{Funktionale Anforderungen}
+
+\begin{itemize}
+
+	\item \textbf{Anforderung: Registrieren eines Pilzfunds}
+	      Der User muss die Möglichkeit haben einen neuen Pilzfund, über eine Eingabemaske im Frontend zu registrieren.
+		  Diese Eingabemaske soll eine automatische Vervollständigung der Eingabe anbieten und soll bereits validieren ob die Eingabe einem gültigen
+		  Wert entspricht. Die in die Eingabemaske einzugebenden Daten sind die Art des Pilzes sowie die Umgebung in der er gefunden wurde.
+		  Erst wenn ein Marker für den Standort auf der Karte gesetzt und sowohl für Art und Umgebung des Pilzes valide Werte eingetragen wurden, soll es 
+		  möglich sein den Eintrag zu speichern, davor soll der Button zum registrieren ausgegraut sein.
+    \item \textbf{}
+	\item \textbf{Anzeigen eines Live Feeds}
+	      Es soll auf der Startseite einen Livefeed geben in dem die letzten Pilzfunde geben. 
+		  Aus dem Livefeed sollen Art und Umgebung der zuletzt registrierten Pilze hervorgehen
+
+	\item \textbf{Anzeige der registrierten Pilze}
+		  Die registrierten Pilze sollen auf einer Openstreetmap Karte als Marker angezeigt werden.
+		  Wenn die Marker angeklickt werden sollen zusätzliche Informationen wie die Art des Pilzes angezeigt werden.
+	      
+
+	\item \textbf{Navbar}
+	      Die Navbar soll die Navigation der Seite ermöglichen und die Möglichkeit bieten, die Eingabemaske zum Registrieren eines Pilzes zu öffnen, sowie zur Startseite zurückzukehren.
+		  Die Navbar soll blau sein und am linken Bildschirmrand das Shroomscout Logo beinhalten
+
+	\item \textbf{Design}
+	      Um eine einheitliche Erfahrung zu schaffen und die Wartung zu erleichtern, sollen primär Komponenten der von Google verwalteten Angular Materials Library verwendet werden.
+
+\end{itemize}
 
 \subsection{Ausblick auf zukuenftige Entwicklungen}
 Die Entwicklung einer Software ist nie endgültig abgeschlossen, es existieren stets Optimierungspotentiale und potentielle weitere Features.
