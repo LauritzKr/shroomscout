@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\subsection{Benutzeranforderungen als Use Cases} % Lauritz
+\subsection{Benutzeranforderungen als Use Cases}
 
 Bei der Entwicklung von Softwareprojekten, wie der Webanwendung `ShroomScout', ist die sorgfältige Definition von
 Benutzeranforderungen ein entscheidender Schritt. Eine bewährte Strategie zur Strukturierung und Priorisierung dieser
@@ -20,46 +20,48 @@ Use Cases für `ShroomScout' detailliert beschrieben, um die grundlegenden Benut
 
 \subsubsection{Karteninteraktion}
 
-Die Karte ist das zentrale Element von `ShroomScout' und ermöglicht es den Nutzern, bereits eingetragene Pilzfundorte
-visuell zu erfassen. Nutzer können auf der Karte navigieren, indem sie hin- und herscrollen sowie hinein- und herauszoomen,
+Die Karte ist das zentrale Element von `ShroomScout' und soll es den Nutzern ermöglichen, bereits eingetragene Pilzfundorte
+visuell zu erfassen. Nutzer sollen auf der Karte navigieren können, indem sie hin- und herscrollen, sowie hinein- und herauszoomen,
 um unterschiedliche Bereiche und Detailstufen zu erkunden. Diese Funktionen sind essenziell, um die Suche nach Pilzstandorten
-intuitiv und effizient zu gestalten. Bereits eingetragene Pilzfundorte sind mit einem Marker markiert und der Name des dort
-gefundenen Pilzes kann durch anklicken oder hovern angezeigt werden. Die Interaktion mit der Karte ist also in Anlehnung an
-andere kartenbasierte Anwendungen konzipiert, sodass Nutzer leicht den gewünschten Kartenausschnitt oder eingetragenen Pilz
-finden können, was die hohe Benutzerfreundlichkeit der Anwendung ermöglicht.
+intuitiv und effizient zu gestalten. Bereits eingetragene Pilzfundorte sollen mit einem Marker markiert sein und der Name des
+dort gefundenen Pilzes soll durch anklicken oder hovern angezeigt werden können. Die Interaktion mit der Karte ist also in
+Anlehnung an andere kartenbasierte Anwendungen konzipiert, sodass Nutzer leicht den gewünschten Kartenausschnitt oder
+eingetragenen Pilz finden können, was eine hohe Benutzerfreundlichkeit der Anwendung ermöglichem soll.
 
 \subsubsection{Pilzfund dokumentieren}
 
-Ein weiterer zentraler Use Case ist das Eintragen eines Pilzfunds durch den Nutzer. Dieser Prozess beginnt mit dem Klick
-auf die Schaltfläche `Pilz eintragen' und umfasst mehrere Schritte:
+Ein weiterer zentraler Use Case ist das Eintragen eines Pilzfunds durch den Nutzer. Dieser Prozess beginnt mit dem Klick auf
+die Schaltfläche `Pilz eintragen' und umfasst mehrere Schritte:
 
 \begin{itemize}
 
-	\item \textbf{Eingabe von Pilzname und Umgebung:}
-	      Der Nutzer gibt den Namen des Pilzes ein, unterstützt durch eine automatische Vervollständigung, um Tippfehler zu
-	      vermeiden und den Prozess zu beschleunigen. Zusätzlich wird die Umgebung des Pilzfunds (z.B. Wiese, Eiche) erfasst.
+	\item \textbf{Eingabe vom Pilznamen und dessen Umgebung:}
+	      Der Nutzer gibt zunächst den Namen des Pilzes ein. Dies soll durch eine automatische Vervollständigung unterstützt werden,
+	      um Tippfehler zu vermeiden und den Prozess zu beschleunigen. Zusätzlich wird die Umgebung des Pilzfunds (z.B. Wiese, Eiche)
+	      erfasst, auswählbar aus einem Dropdown Menü.
 
 	\item \textbf{Anzeigen eines Bildes des Pilzes:}
-	      Nach der Eingabe des Pilznamens wird automatisch ein Bild des entsprechenden Pilzes angezeigt. Dies dient der visuellen
+	      Nach der Eingabe des Pilznamens soll automatisch ein Bild des entsprechenden Pilzes angezeigt werden. Dies dient der visuellen
 	      Bestätigung und hilft, Verwechslungen zu vermeiden.
 
 	\item \textbf{Markieren des Fundorts auf der Karte:}
-	      Der Nutzer platziert einen Marker auf der Karte, um den genauen Fundort des Pilzes zu dokumentieren.
+	      Der Nutzer platziert einen Marker auf der Karte, um den genauen Fundort des Pilzes zu dokumentieren. Diese Markierung soll
+	      korrigierbar sein, falls Nutzer versehentlich den falschen Standort angeben.
 
 	\item \textbf{Finale Dokumentation:}
-	      Sind alle Informationen angegeben, kann der Pilzfundort mit einem Knopf eingetragen werden. Um sicherzustellen, dass alle
-	      notwendigen Eingaben getätigt worden sind, aktiviert sich dieser erst, wenn die drei oben stehenden Aktionen ausgeführt
-	      worden sind. So kommt es zu keinen fehlerhaften Einträgen, was weiter zur Benutzerfreundlichkeit und Einfachheit beiträgt.
+	      Sind alle Informationen angegeben, soll der Pilzfundort mit einem Knopf eingetragen werden können. Um sicherzustellen, dass
+	      alle notwendigen Eingaben getätigt worden sind, soll sich dieser erst aktivieren, wenn die drei oben stehenden Aktionen ausgeführt
+	      worden sind. So kann es zu keinen fehlerhaften Einträgen kommen, was weiter zur Benutzerfreundlichkeit und Einfachheit beiträgt.
 
 \end{itemize}
 
 \subsubsection{Einsehen des Live-Feeds}
 
-Der Live Feed stellt eine Auflistung der jüngsten Pilzfunde dar und wird kontinuierlich aktualisiert. Obwohl Nutzer mit dem
-Live Feed nicht direkt interagieren können, dient er als wichtige Informations- und Inspirationsquelle für die Community.
-Die Anzeige der neuesten Funde fördert das Gemeinschaftsgefühl und motiviert Nutzer, eigene Entdeckungen zu teilen. Obwohl der
-Live Feed keine direkte Nutzerinteraktion beinhaltet, ist er ein wesentlicher Bestandteil des Nutzererlebnisses und trägt zur
-Dynamik der Anwendung bei.
+Der Live Feed stellt eine Auflistung der jüngsten Pilzfunde dar und soll kontinuierlich aktualisiert werden. Obwohl Nutzer mit dem
+Live Feed nicht direkt interagieren können, dient er als wichtige Informations- und Inspirationsquelle für die Community. Die Anzeige
+der neuesten Funde soll das Gemeinschaftsgefühl fördern und Nutzer motivieren, selbst an pilzreichen Orten Pilze suchen zu gehen. Obwohl
+der Live Feed keine direkte Nutzerinteraktion beinhaltet, ist er ein wesentlicher Bestandteil des Nutzererlebnisses und trägt zur Dynamik
+der Anwendung bei.
 
 Zusammenfassend bilden diese Use Cases das Fundament für die Interaktion der Nutzer mit `ShroomScout' und definieren klare
 Anforderungen an die Funktionalität und Benutzerfreundlichkeit der Anwendung. Durch die detaillierte Ausarbeitung dieser Use
@@ -68,12 +70,12 @@ und eine intuitive, effiziente und ansprechende Benutzererfahrung bietet.
 
 \subsection{Funktionale Anforderungen} % Tim
 
-\subsection{Nicht-funktionale Anforderungen} % Lauritz
+\subsection{Nicht-funktionale Anforderungen}
 
 Neben den funktionalen Anforderungen, die spezifische Aktionen und Verhaltensweisen des Systems beschreiben, spielen
 nicht-funktionale Anforderungen eine entscheidende Rolle für den Erfolg eines Softwareprojekts. Sie definieren die
 Qualitätsattribute der Anwendung und beeinflussen maßgeblich die Nutzerzufriedenheit. Für die Webanwendung `ShroomScout'
-lassen sich folgende nicht-funktionale Anforderungen festhalten:
+sind die folgenden nicht-funktionale Anforderungen eingeplant:
 
 \begin{itemize}
 
@@ -85,13 +87,13 @@ lassen sich folgende nicht-funktionale Anforderungen festhalten:
 
 	\item \textbf{Responsive Design}
 	      Angesichts der Tatsache, dass Nutzer `ShroomScout' häufig im Freien und damit auf mobilen Geräten nutzen werden, ist ein
-	      responsive Design unerlässlich. Die Anwendung muss sich automatisch an verschiedene Bildschirmgrößen und -auflösungen
-	      anpassen, um auf Smartphones, Tablets und Desktop-Computern gleichermaßen gut bedienbar zu sein. Dies gewährleistet eine
+	      responsive Design unerlässlich. Das heißt, dass sich die Anwendung automatisch an verschiedene Bildschirmgrößen und -auflösungen
+	      anpassen muss, um auf Smartphones, Tablets und Desktop-Computern gleichermaßen gut bedienbar zu sein. Dies gewährleistet eine
 	      optimale Benutzererfahrung unabhängig vom Endgerät.
 
 	\item \textbf{Schnelle Ladezeiten}
-	      Für eine positive Nutzererfahrung sind kurze Ladezeiten von großer Bedeutung. `ShroomScout' sollte so optimiert sein,
-	      dass die Anwendung auch bei langsamer Internetverbindung schnell lädt. Dies ist besonders wichtig, da Nutzer die Anwendung
+	      Für eine positive Nutzererfahrung sind kurze Ladezeiten von großer Bedeutung. `ShroomScout' sollte so optimiert sein, dass die
+	      Anwendung auch bei langsamer Internetverbindung schnell lädt, bzw. aktualisiert. Dies ist besonders wichtig, da Nutzer die Anwendung
 	      möglicherweise in Gebieten mit schlechter Netzabdeckung verwenden.
 
 	\item \textbf{Sicherheit und Datenschutz}
@@ -102,15 +104,6 @@ lassen sich folgende nicht-funktionale Anforderungen festhalten:
 	\item \textbf{Skalierbarkeit}
 	      Die Anwendung muss in der Lage sein, mit einer zunehmenden Anzahl von Nutzern und Datenmengen zu skalieren. Dies stellt
 	      sicher, dass `ShroomScout' auch bei wachsender Beliebtheit und steigenden Anforderungen stabil und performant bleibt.
-
-	\item \textbf{Barrierefreiheit}
-	      `ShroomScout' sollte so gestaltet sein, dass die Anwendung auch für Menschen mit Behinderungen zugänglich ist. Dies
-	      umfasst beispielsweise die Implementierung von Screenreader-Unterstützung und die Anpassung von Farbkontrasten für eine
-	      bessere Lesbarkeit.
-
-	\item \textbf{Mehrsprachigkeit}
-	      Um eine breite Nutzerbasis anzusprechen und die Anwendung auch für nicht deutschsprachige Pilzsammler attraktiv zu machen,
-	      sollte `ShroomScout' die Möglichkeit bieten, die Benutzeroberfläche in verschiedenen Sprachen darzustellen.
 
 \end{itemize}
 

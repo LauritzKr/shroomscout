@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\subsection{Übergreifende Technologien} % Lauritz
+\subsection{Übergreifende Technologien}
 
 \subsubsection{VSCode}
 
@@ -30,7 +30,9 @@ Kartenanbietern wie Google Maps bietet OSM den Vorteil, dass die Daten unter ein
 Anpassung der Karteninformationen ermöglicht. Ein entscheidender Vorteil von OSM ist dabei die Möglichkeit, eigene Layer zu erstellen und
 zu verwalten, etwa für Pilzfundorte. Diese Flexibilität und die offene Datenlizenz machen OSM zu einer idealen Wahl für Projekte, die auf
 detaillierte geographische Informationen angewiesen sind und gleichzeitig die Kontrolle über die Darstellung und Verwaltung der Kartendaten
-behalten möchten.
+behalten möchten. Jedoch wurde sich im Projektverlauf gegen die Erstellung einer eigenen Pilzlayer und somit gegen das befüllen der OSM Datenbank
+entschieden, um etwaige persönliche Konflikte mit den Betreibern dieser zu vermeiden. Des weiteren bietet eine eigene Datenbank mehr Flexibilität
+und die Möglichkeit, das Backend ausgiebig mithilfe von Dummy-Testdaten zu testen. Dies wäre mit der offiziellen OSM Datenbank nicht möglich gewesen.
 
 \subsection{Datenbankloesung} % Tim
 
@@ -52,7 +54,7 @@ Insgesamt bietet FastAPI eine leistungsstarke Kombination aus Geschwindigkeit, e
 
 \subsubsection{Uvicorn ASGI Server}
 
-\subsection{Frontend Technologien} % Lauritz
+\subsection{Frontend Technologien}
 
 \subsubsection{Angular \& Typescript}
 
@@ -125,6 +127,9 @@ Zwischen diesen Komponenten müssen an mehreren Stellen Daten ausgetauscht werde
 	      Der Marker Service dient der Verwaltung der Pilzfundort-Markierungen auf der Karte. Er erhält die angezeigte Karteninstanz und kann dadurch auf
 	      dieser temporäre Markierungen setzen. Außerdem enthält er Methoden zum Persistieren eines Markers, wenn der User einen Pilz einträgt. Somit ist
 	      auch dieser Service essentiell, um das Zusammenspiel zwischen der Karten- und Eingabemaskenkomponente zu ermöglichen.
+
+	\item \textbf{Shroom Service:} % Tim
+	      ...
 
 \end{itemize}
 
