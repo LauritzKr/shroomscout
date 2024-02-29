@@ -1,4 +1,4 @@
-\documentclass[../main.tex]{subfiles} % ~1800 Worte
+\documentclass[../main.tex]{subfiles}
 
 \begin{document}
 
@@ -34,47 +34,48 @@ behalten möchten. Jedoch wurde sich im Projektverlauf gegen die Erstellung eine
 entschieden, um etwaige persönliche Konflikte mit den Betreibern dieser zu vermeiden. Des weiteren bietet eine eigene Datenbank mehr Flexibilität
 und die Möglichkeit, das Backend ausgiebig mithilfe von Dummy-Testdaten zu testen. Dies wäre mit der offiziellen OSM Datenbank nicht möglich gewesen.
 
-\subsection{Datenbankloesung} % Tim
+\subsection{Datenbankloesung}
 
-Eine Datenbanklösung spielt für eine Webanwendung eine zentrale Rolle in der Verwaltung, Speicherung und Abfrage von Daten, die für die Funktion und den Betrieb der Anwendung entscheidend sind. 
-Sie dient als Rückgrat für die Datenspeicherung, indem sie einen strukturierten und effizienten Mechanismus zur Datenhaltung bietet. 
-Dies ermöglicht es, große Mengen von Daten systematisch zu organisieren, zu verwalten und zugänglich zu machen.
+Eine Datenbanklösung spielt für eine Webanwendung eine zentrale Rolle in der Verwaltung, Speicherung und Abfrage von Daten, die für die Funktion und
+den Betrieb der Anwendung entscheidend sind. Sie dient als Rückgrat für die Datenspeicherung, indem sie einen strukturierten und effizienten Mechanismus
+zur Datenhaltung bietet. Dies ermöglicht es, große Mengen von Daten systematisch zu organisieren, zu verwalten und zugänglich zu machen.
 
 \subsubsection{SQLite}
 
-SQLite ist eine weit verbreitete, in C geschriebenes Datenbanksystem, die ein kompaktes, selbstgenügsames, hochzuverlässiges und vollständiges SQL-Datenbanksystem bietet. 
-Als eingebettete Datenbanksoftware ermöglicht SQLite die Speicherung von Daten in einer lokalen Datei, wodurch die Notwendigkeit eines separaten Servers entfällt.
-Diese Eigenschaft macht SQLite optimal für kollaborative Software Entwicklung.
+SQLite ist ein weit verbreitetes, in C geschriebenes Datenbanksystem, das ein kompaktes, selbstgenügsames, hochzuverlässiges und vollständiges SQL-Datenbanksystem
+bietet. Als eingebettete Datenbanksoftware ermöglicht SQLite die Speicherung von Daten in einer lokalen Datei, wodurch die Notwendigkeit eines separaten Servers
+entfällt. Diese Eigenschaft macht SQLite optimal für kollaborative Software Entwicklung.
 
 \subsubsection{Tabellenstruktur}
 
-Die Datenbank für Shroomscout besteht aus 2 Tabellen, findLog und mushrooms.
-Die Tabelle findLog enthält alle Pilzfunde, sie besitzt die Spalten: id, mushroom, latitude, longitude und Environment, die id wird automatisch vergeben. 
-Die restlichen Daten werden durch Nutzer, durch ausfüllen der Eingabemaske und setzen des Marker durch klicken auf die Karte eingegeben.
-Die Tabelle mushrooms enthält die Spalten id, name und scientificName. Die id wird erneut automatisch vergeben, Name und wissenschaftlicher Name des Pilz werden manuell in die Datenbank eingepflegt.
+Die Datenbank für Shroomscout besteht aus 2 Tabellen, `findLog' und `mushrooms'. Die Tabelle `findLog' enthält alle Pilzfunde. Sie besitzt die Spalten: id, mushroom,
+latitude, longitude und Environment; die id wird automatisch vergeben. Die restlichen Daten werden durch Nutzer, welche die Eingabemaske ausfüllen und einen Marker
+durch Klicken auf die Karte setzen, eingegeben. Die Tabelle `mushrooms' enthält die Spalten id, name und scientificName. Die id wird erneut automatisch vergeben, Name
+und wissenschaftlicher Name des Pilz werden manuell in die Datenbank eingepflegt.
 
-
-\subsection{Backend Technologien} % Tim
+\subsection{Backend Technologien}
 
 \subsubsection{Python}
 
-Python ist eine interpretierte, high-level Programmiersprache, die sich vor Allem durch ihre einfache Syntax und Übersichtlichkeit auszeichnet. 
-Sie unterstützt verschiedene Programmierparadigmen und verfügt über eine umfangreiche Standardbibliothek sowie ein reiches Ökosystem von Drittanbieter-Bibliotheken. 
-Dies macht Python besonders attraktiv für die Entwicklung kleiner Webanwendungen wie Shroomscout.
+Python ist eine interpretierte, high-level Programmiersprache, die sich vor Allem durch ihre einfache Syntax und Übersichtlichkeit auszeichnet. Sie unterstützt
+verschiedenste Programmierparadigmen und verfügt über eine umfangreiche Standardbibliothek sowie ein reiches Ökosystem von Drittanbieter-Bibliotheken. Dies macht
+Python besonders attraktiv für die Entwicklung kleiner Webanwendungen wie `Shroomscout'.
 
 \subsubsection*{FastAPI}
-FastAPI ist ein hochperformantes, modernes Web-Framework für Python, das sich durch die Verwendung von Typ-Hinweisen auszeichnet und speziell für die Entwicklung von APIs entworfen wurde.
-Es kombiniert Geschwindigkeit mit der Einfachheit der Validierung durch Python Type Hinting, was den Entwicklungsprozess beschleunigt und die Fehleranfälligkeit reduziert. 
-Durch die native Unterstützung asynchroner Anfragen verbessert FastAPI zudem die Effizienz und Skalierbarkeit von I/O-intensiven Anwendungen. 
-Ein weiterer Vorteil ist die automatische Erstellung von API-Dokumentationen mittels Swagger UI und ReDoc, welche die Nutzung und Wartung der API erheblich erleichtert. 
-Insgesamt bietet FastAPI eine leistungsstarke Kombination aus Geschwindigkeit, einfacher Handhabung und effizienter Entwicklung, was es zu einer guten Wahl für Shroomscout macht.
+
+FastAPI ist ein hochperformantes, modernes Web-Framework für Python, das sich durch die Verwendung von Typ-Hinweisen auszeichnet und speziell für die Entwicklung
+von APIs entworfen wurde. Es kombiniert Geschwindigkeit mit der Einfachheit der Validierung durch Python Type Hinting, was den Entwicklungsprozess beschleunigt und
+die Fehleranfälligkeit reduziert. Durch die native Unterstützung asynchroner Anfragen verbessert FastAPI zudem die Effizienz und Skalierbarkeit von I/O-intensiven
+Anwendungen. Ein weiterer Vorteil ist die automatische Erstellung von API-Dokumentationen mittels Swagger UI und ReDoc, welche die Nutzung und Wartung der API erheblich
+erleichtert. Insgesamt bietet FastAPI eine leistungsstarke Kombination aus Geschwindigkeit, einfacher Handhabung und effizienter Entwicklung, was es zu einer guten Wahl
+für Shroomscout macht.
 
 \subsubsection{Uvicorn ASGI Server}
 
-Uvicorn ist ein leichtgewichtiger, hochperformanter Application Server Gateway Interface (ASGI) Server, implementiert in Python. 
-ASGI ist ein Spezifikationsstandard, der als Schnittstelle zwischen asynchronen Python Web-Apps und Servern dient, ähnlich wie das Web Server Gateway Interface (WSGI) für synchrone Python Web-Apps. 
-Uvicorn nutzt die asynchrone und ereignisgesteuerte Programmierung, die in Python 3.5+ durch die Einführung von asyncio standardisiert wurde, 
-um eine effiziente und skalierbare Grundlage für das Hosting von Webanwendungen und -diensten zu bieten.
+Uvicorn ist ein leichtgewichtiger, hochperformanter Application Server Gateway Interface (ASGI) Server, implementiert in Python. ASGI ist ein Spezifikationsstandard,
+der als Schnittstelle zwischen asynchronen Python Web-Apps und Servern dient, ähnlich wie das Web Server Gateway Interface (WSGI) für synchrone Python Web-Apps.
+Uvicorn nutzt die asynchrone und ereignisgesteuerte Programmierung, die in Python 3.5+ durch die Einführung von asyncio standardisiert wurde, um eine effiziente und
+skalierbare Grundlage für das Hosting von Webanwendungen und -diensten zu bieten.
 
 \subsection{Frontend Technologien}
 
@@ -150,12 +151,12 @@ Zwischen diesen Komponenten müssen an mehreren Stellen Daten ausgetauscht werde
 	      dieser temporäre Markierungen setzen. Außerdem enthält er Methoden zum Persistieren eines Markers, wenn der User einen Pilz einträgt. Somit ist
 	      auch dieser Service essentiell, um das Zusammenspiel zwischen der Karten- und Eingabemaskenkomponente zu ermöglichen.
 
-	\item \textbf{Shroom Service:} % Tim
+	\item \textbf{Shroom Service:}
 	      ...
 
 \end{itemize}
 
-\subsubsection{Backend Kommunikation}  % Tim
+\subsubsection{Backend Kommunikation}
 
 \subsubsection{Responsive Design}
 
