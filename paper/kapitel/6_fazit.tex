@@ -1,63 +1,61 @@
 \documentclass[../main.tex]{subfiles}
-%1000 Worte, Tim
+
 \begin{document}
+
 \subsection{Anforderungskonformität der Applikation}
-Das wichtigste Kriterium für gute Software ist Anforderungskonformität, im folgenden werden die Anforderungen den Ergebnissen gegenübergestellt:
+
+Das wichtigste Kriterium für gute Software ist Anforderungskonformität. Im folgenden werden die Anforderungen den Ergebnissen gegenübergestellt:
 
 \subsubsection{Funktionale Anforderungen}
 
 \begin{itemize}
 
 	\item \textbf{Anforderung: Registrieren eines Pilzfunds}
-	      Der User muss die Möglichkeit haben einen neuen Pilzfund, über eine Eingabemaske im Frontend zu registrieren.
-		  Diese Eingabemaske soll eine automatische Vervollständigung der Eingabe anbieten und soll bereits validieren ob die Eingabe einem gültigen
-		  Wert entspricht. Die in die Eingabemaske einzugebenden Daten sind die Art des Pilzes sowie die Umgebung in der er gefunden wurde.
-		  Erst wenn ein Marker für den Standort auf der Karte gesetzt und sowohl für Art und Umgebung des Pilzes valide Werte eingetragen wurden, soll es 
-		  möglich sein den Eintrag zu speichern, davor soll der Button zum registrieren ausgegraut sein.
+	      Der Nutzer muss die Möglichkeit haben einen neuen Pilzfund über eine Eingabemaske im Frontend zu registrieren. Diese Eingabemaske soll eine
+	      automatische Vervollständigung der Eingabe anbieten und soll bereits validieren, ob die Eingabe einem gültigen Wert entspricht. Die in die
+	      Eingabemaske einzugebenden Daten sollen die Art des Pilzes, sowie die Umgebung, in der er gefunden wurde, sein. Erst wenn ein Marker für den
+	      Standort auf der Karte gesetzt und sowohl für Art und Umgebung des Pilzes valide Werte eingetragen wurden, soll es möglich sein den Eintrag zu
+	      speichern. Davor soll der Button zum registrieren ausgegraut und somit nicht klickbar sein.
 
-    \item \textbf{Umsetzung: Registrieren eines Pilzfunds}
-          Die Eingabemaske wurde entsprechend der Anforderungen umgesetzt. 
-          Die Validation der vom User eingegeben Werte wurde mit Hilfe von Angular FormControl und der Angular Materials Komponente Autocomplete umgesetzt.
+	\item \textbf{Umsetzung: Registrieren eines Pilzfunds}
+	      Die Eingabemaske wurde entsprechend der Anforderungen umgesetzt. Die Validierung der vom Nutzer eingegeben Werte wurde mit Hilfe von Angular
+	      FormControl und der Angular Materials Komponente `Autocomplete' umgesetzt.
 
 	\item \textbf{Anforderung: Anzeigen eines Live Feeds}
-	      Es soll auf der Startseite einen Livefeed geben in dem die letzten Pilzfunde geben. 
-		  Aus dem Livefeed sollen Art und Umgebung der zuletzt registrierten Pilze hervorgehen
+	      Es soll auf der Startseite einen Livefeed geben, in dem die letzten Pilzfunde aufgeführt sind. Aus dem Livefeed sollen Art und Umgebung der
+	      zuletzt registrierten Pilze hervorgehen.
 
-    \item \textbf{Umsetzung: Anzeigen eines Live Feeds}
-          Der Live Feed wurde mit Hilfe eines Angular Services und einer Angular Materials Komponente umgesetzt. 
+	\item \textbf{Umsetzung: Anzeigen eines Live Feeds}
+	      Der Live Feed wurde mit Hilfe eines Angular Services und einer Angular Materials Komponente umgesetzt.
 
 	\item \textbf{Anforderung: Anzeige der registrierten Pilze}
-		  Die registrierten Pilze sollen auf einer Openstreetmap Karte als Marker angezeigt werden.
-		  Wenn die Marker angeklickt werden sollen zusätzliche Informationen wie die Art des Pilzes angezeigt werden.
+	      Die registrierten Pilze sollen auf einer OpenStreetMap Karte als Marker angezeigt werden. Wenn über die Marker gehovert wird, sollen zusätzliche
+	      Informationen, genauer, der Name des Pilzes, angezeigt werden.
 
 	\item \textbf{Umsetzung: Anzeige der registrierten Pilze}
-		  Die registrierten Pilze werden anhand ihrer Längen und Breitendaten in der Datenbank gespeichert.
-          Beim Laden der Seite werden die Information Namen, Umgebung, Längengrad und Breitengrad von einem Angular Service beim Backend abgefragt, anschließend ans Frontend gesendet
-          und als Marker auf der Karte angezeigt.
+	      Die registrierten Pilze werden anhand ihrer Längen- und Breitengraddaten in der Datenbank gespeichert. Beim Laden der Seite werden die Informationen
+	      Name, Umgebung, Längengrad und Breitengrad von einem Angular Service beim Backend abgefragt, anschließend an das Frontend gesendet und als Marker auf
+	      der Karte angezeigt.
 
-	\item \textbf{Anforderung: Navbar}
-	      Die Navbar soll die Navigation der Seite ermöglichen und die Möglichkeit bieten, die Eingabemaske zum Registrieren eines Pilzes zu öffnen, sowie zur Startseite zurückzukehren.
-		  Die Navbar soll blau sein und am linken Bildschirmrand das Shroomscout Logo beinhalten.
+	\item \textbf{Anforderung: Navigationsleiste}
+	      Die Navigationsleiste soll die Navigation innerhalb der Webseite ermöglichen und die Möglichkeit bieten, die Eingabemaske zum Registrieren eines
+	      Pilzes zu öffnen, sowie zur Startseite zurückzukehren. Die Navigationsleiste soll blau sein und am linken Bildschirmrand das ShroomScout Logo
+	      beinhalten.
 
-    \item \textbf{Umsetzung: Navbar}
-	      Die Navbar wurde mit Hilfe der Angular Material Navbar Komponente implementiert und ermöglicht den Zugriff auf alle Teile des Frontends.
-          Die Navbar ist blau und beinhaltet das Shroomscout Logo am linken Bildschirmrand.
+	\item \textbf{Umsetzung: Navigationsleiste}
+	      Die Navigationsleiste wurde mit Hilfe der Angular Material `Navbar' Komponente implementiert und ermöglicht den Zugriff auf alle Teile des Frontends.
+	      Die Navigationsleiste ist blau und beinhaltet das Shroomscout Logo am linken Bildschirmrand.
 
 	\item \textbf{Anforderung: Design}
-	      Um eine einheitliche Erfahrung zu schaffen und die Wartung zu erleichtern, sollen primär Komponenten der von Google verwalteten Angular Materials Library verwendet werden.
+	      Um eine einheitliche Erfahrung zu schaffen und die Wartung zu erleichtern, sollen primär Komponenten der von Google verwalteten Angular Materials
+	      Bibliothek verwendet werden.
 
-    \item \textbf{Umsetzung: Design}
-          Bis auf die Karte, wurde das Design der Website ausschließlich mit Angular Components Komponenten erstellt.
+	\item \textbf{Umsetzung: Design}
+	      Bis auf die Karte, wurde das Design der Website ausschließlich mit Angular Material Komponenten erstellt.
+
 \end{itemize}
 
 \subsubsection{Nicht-funktionale Anforderungen}
-
-\subsection{Nicht-funktionale Anforderungen}
-
-Neben den funktionalen Anforderungen, die spezifische Aktionen und Verhaltensweisen des Systems beschreiben, spielen
-nicht-funktionale Anforderungen eine entscheidende Rolle für den Erfolg eines Softwareprojekts. Sie definieren die
-Qualitätsattribute der Anwendung und beeinflussen maßgeblich die Nutzerzufriedenheit. Für die Webanwendung `ShroomScout'
-sind die folgenden nicht-funktionale Anforderungen eingeplant:
 
 \begin{itemize}
 
@@ -67,84 +65,87 @@ sind die folgenden nicht-funktionale Anforderungen eingeplant:
 	      Nutzeroberfläche, die es dem Anwender ermöglicht, ohne umständliche Navigation oder komplizierte Prozesse Pilze zu finden
 	      und einzutragen.
 
-    \item \textbf{Umsetzung: Einfachheit und Benutzerfreundlichkeit}
-          Die Einfachheit wurde durch ein klares, minimales Design umgesetzt. 
-          Um die Benutzung für alle Nutzer zu erleichtern, wurden Buttons mit großer deskriptiver Aufschrift eingesetzt.
+	\item \textbf{Umsetzung: Einfachheit und Benutzerfreundlichkeit}
+	      Die Einfachheit wurde durch ein klares, minimales Design umgesetzt. Um die Benutzung für alle Nutzer zu erleichtern, wurden
+	      Buttons mit großer deskriptiver Aufschrift eingesetzt.
 
 	\item \textbf{Anforderung: Responsive Design}
 	      Angesichts der Tatsache, dass Nutzer `ShroomScout' häufig im Freien und damit auf mobilen Geräten nutzen werden, ist ein
 	      responsive Design unerlässlich. Das heißt, dass sich die Anwendung automatisch an verschiedene Bildschirmgrößen und -auflösungen
 	      anpassen muss, um auf Smartphones, Tablets und Desktop-Computern gleichermaßen gut bedienbar zu sein. Dies gewährleistet eine
 	      optimale Benutzererfahrung unabhängig vom Endgerät.
-    
-    \item \textbf{Umsetzung: Responsive Design}
-          Die Applikation wurde mithilfe von CSS auf eine verbesserte Anzeige auf mobilen Geräten optimiert.
-	      
+
+	\item \textbf{Umsetzung: Responsive Design}
+	      Die Applikation wurde mithilfe von CSS auf eine verbesserte Anzeige auf mobilen Geräten optimiert.
+
 	\item \textbf{Anforderung: Schnelle Ladezeiten}
 	      Für eine positive Nutzererfahrung sind kurze Ladezeiten von großer Bedeutung. `ShroomScout' sollte so optimiert sein, dass die
 	      Anwendung auch bei langsamer Internetverbindung schnell lädt, bzw. aktualisiert. Dies ist besonders wichtig, da Nutzer die Anwendung
 	      möglicherweise in Gebieten mit schlechter Netzabdeckung verwenden.
 
-    \item \textbf{Umsetzung: Schnelle Ladezeiten}
-	      Um die Ladezeiten zu optimieren wurde auf eine möglichst schlichte Seite, welche mit Ausnahme der OpenStreeMap Karte, 
-          ohne externe Inhalte auskommt, welche erst geladen werden müssten.
+	\item \textbf{Umsetzung: Schnelle Ladezeiten}
+	      Um die Ladezeiten zu optimieren, wurde auf eine möglichst schlichte Seite gesetzt, welche mit Ausnahme der OpenStreeMap Karte
+	      ohne externe Inhalte auskommt, welche erst geladen werden müssten.
 
 	\item \textbf{Anforderungen: Sicherheit und Datenschutz}
 	      Die Sicherheit persönlicher Daten und die Wahrung der Privatsphäre der Nutzer sind essenzielle Anforderungen. `ShroomScout'
 	      muss sicherstellen, dass alle Nutzerdaten, insbesondere Standortinformationen und persönliche Informationen, gemäß den
 	      geltenden Datenschutzrichtlinien behandelt und geschützt werden.
 
-    \item \textbf{Umsetzung: Sicherheit und Datenschutz}
-          Die Sicherheit wurde so gut wie möglich durch die Implementierung von Maßnahmen zur Verhinderung von SQLinjections, Verwendung aktueller Software Versionen, sowie möglichst weniger Dependencies umgesetzt.
-          Der Datenschutz wurde in sofern umgesetzt, dass Shroomscout keine personenbezogenen Daten erhebt oder speichert und die Nutzung ohne Account möglich ist.
-          Beim produkiven Einsatz der Software ist für datenschutz- und sicherheitsgerechte Konfiguration der Server sorge zu tragen.
+	\item \textbf{Umsetzung: Sicherheit und Datenschutz}
+	      Die Sicherheit wurde so gut wie möglich durch die Implementierung von Maßnahmen zur Verhinderung von SQL-Injections, Verwendung aktueller
+	      Software Versionen, sowie möglichst weniger Abhängigkeiten umgesetzt. Der Datenschutz wurde in sofern umgesetzt, als dass Shroomscout keine
+	      personenbezogenen Daten erhebt oder speichert und die Nutzung ohne Account möglich ist. Beim produkiven Einsatz der Software ist für datenschutz-
+	      und sicherheitsgerechte Konfiguration der Server Sorge zu tragen.
 
 	\item \textbf{Anforderung: Skalierbarkeit}
 	      Die Anwendung muss in der Lage sein, mit einer zunehmenden Anzahl von Nutzern und Datenmengen zu skalieren. Dies stellt
 	      sicher, dass `ShroomScout' auch bei wachsender Beliebtheit und steigenden Anforderungen stabil und performant bleibt.
-    
-    \item \textbf{Umsetzung: Skalierbarkeit}
-          Die Skalierbarkeit der Anwendung wurde durch die Trennung von Frontend und Backend umgesetzt wodurch sich beide Teile individuell skalieren lassen.
-          Jedoch ist die Skalierbarkeit aufgrund des aktuell verwendeten Datenbanksystems auf vertikale Skalierung begrenzt, insofern kein weiter Aufwand betrieben wird,
-          die Datenbank über mehrere Instanzen zu synchronisieren.
+
+	\item \textbf{Umsetzung: Skalierbarkeit}
+	      Die Skalierbarkeit der Anwendung wurde durch die Trennung von Frontend und Backend umgesetzt wodurch sich beide Teile individuell skalieren lassen.
+	      Jedoch ist die Skalierbarkeit aufgrund des aktuell verwendeten Datenbanksystems auf vertikale Skalierung begrenzt, insofern kein weiter Aufwand betrieben wird,
+	      die Datenbank über mehrere Instanzen zu synchronisieren.
+
 \end{itemize}
 
 \subsection{Ausblick auf zukuenftige Entwicklungen}
-Die Entwicklung einer Software ist potentiell nie endgültig abgeschlossen, es existieren stets Optimierungspotentiale und potentielle weitere Features.
+
+Die Entwicklung einer Software ist potentiell nie endgültig abgeschlossen. Es existieren also stets Optimierungspotentiale und potentielle weitere Features.
 Würde die Entwicklung von Shroomscout unmittelbar weitergeführt werden, wären die folgenden Punkte die unmittelbaren Verbesserungspotenziale
 
 \begin{itemize}
 
-    \item \textbf{Performanteres Datenbanksystem}
-        Die Verwendung eines performanteren serverbasierten Datenbanksystem bildet das Fundament für weitere Optimierungen, da die aktuelle Lösung nicht für userintensive
-        Produktivanwendungen ausgelegt ist und daher bei der Skalierung der Software schnell zum Flaschenhals werden würde. Der Migrationsaufwand auf ein System wie MySQL oder PostgreSQL
-        wäre, des Weiterem mit verhältnismäßig geringem Aufwand verbunden, da solange die Tabellenstruktur übernommen wird, die nötigen Anpassungen am Code verhältnismäßig klein sind. 
+	\item \textbf{Performanteres Datenbanksystem:}
+	      Die Verwendung eines performanteren serverbasierten Datenbanksystem bildet das Fundament für weitere Optimierungen, da die aktuelle Lösung nicht für
+	      nutzungsintensive Produktivanwendungen ausgelegt ist und daher bei der Skalierung der Software schnell zum Flaschenhals werden würde. Der Migrationsaufwand
+	      auf ein System, wie MySQL oder PostgreSQL, wäre des weiterem mit verhältnismäßig geringem Aufwand verbunden, da solange die Tabellenstruktur übernommen wird,
+	      die nötigen Anpassungen am Code verhältnismäßig klein sind.
 
-	\item \textbf{Containerrisierung \& Microservices}
-	    Die Software folgt aktuell dem Server-Client-Muster und ist darauf ausgelegt unmittelbar auf einem System zu Laufen.
-        Zur Erleichterung des Deployments und Erhöhung der Skalierbarkeit, ist es sinnvoll Container Virtualisierungslösungen, wie beispielsweise Docker oder Podman zu nutzen.
-        In diesem Rahmen wäre ebenfalls eine Anpassung der Systemarchitektur hin zu Microservices sinnvoll, bei diesem Ansatz wird die Applikation in viele Microservices aufgespalten,
-        die jeweils eine oder wenige Aufgaben erfüllen und unabhängig von einander laufen. Die Vorteile dieses Architekturansatz liegt ebenfalls in der erhöhten Skalierbarkeit, jedoch
-        bietet er auch erleichterte Fehlerfindung durch getrennt laufende Services, die individuell getestet werden können.
-        
-    \item \textbf{Implementierung von Validierungen}
-        Eine wichtige Optimierung im Hinblick auf die Sicherheit der Applikation ist die Implementierungen von Validierungen für User Input und Anfragen an das Backend.
-        Die aktuellen Validierungen, verhindern nur eine versehentliche eingabe ungültiger Werte durch den Nutzer und SQLinjection Attacken. Anfragen das Backend hingegen werden
-        im Moment nicht validiert, was potentiell zu Sicherheitslücken führen kann. Die Implementierung dieser Validierungen ist mit verhältnismäßig geringem Aufwand verbunden,
-        es besteht jedoch das Risiko, dass nicht alle Fälle abgedeckt werden. Des Weiteren ist es im produktiven Einsatz wichtig, Techniken wie Ratelimiting zu implementieren um 
-        DDOS Attacken vorzubeugen.
-        
-    \item \textbf{Usersystem}
-        Im Moment funktioniert Shroomscout weitestgehend anonym, ein Nutzer muss sich nicht authentifizieren um die Software zu nutzen. Dies hat einige Vorteile, nicht zuletzt die
-        Vereinfachte Umsetzung von Datenschutzrichtlinien bei minimaler Erhebung von Nutzerdaten, jedoch bringt die Implementierung eines Usersystems viele Vorteile mit sich.
-        User könnten Präferenzen oder Filter speichern und eine zwingende Registrierung zur Nutzung der Anwendung kann Helfen, Missbrauch der Plattform zu verhindern.
+	\item \textbf{Containerrisierung \& Microservices:}
+	      Die Software folgt aktuell dem Server-Client-Muster und ist darauf ausgelegt unmittelbar auf einem System zu Laufen. Zur Erleichterung des Deployments und
+	      Erhöhung der Skalierbarkeit ist es sinnvoll, Container Virtualisierungslösungen, wie beispielsweise Docker oder Podman zu nutzen. In diesem Rahmen wäre ebenfalls
+	      eine Anpassung der Systemarchitektur hin zu Microservices sinnvoll. Bei diesem Ansatz wird die Applikation in viele Microservices aufgespalten, die jeweils eine
+	      oder wenige Aufgaben erfüllen und unabhängig von einander laufen. Die Vorteile dieses Architekturansatz liegt ebenfalls in der erhöhten Skalierbarkeit, jedoch
+	      bietet er auch erleichterte Fehlerfindung durch getrennt laufende Services, die individuell getestet werden können.
 
-    \item \textbf{Reimplementierung des Backendcodes}
-        Das Backend wurde in Python implementiert, maßgebliche Kriterien für diese Entscheidung waren die Einfachheit und das breite Angebot von Ressourcen für die Programmiersprache.
-        Python ist jedoch, verglichen mit anderen Programmiersprachen, nicht sehr performant und ressourceneffizient. Daher kann es sinnvol
+	\item \textbf{Implementierung von Validierungen:}
+	      Eine wichtige Optimierung im Hinblick auf die Sicherheit der Applikation ist die Implementierungen von Validierungen für Nutzereingaben und Anfragen an das Backend.
+	      Die aktuellen Validierungen verhindern nur eine versehentliche Eingabe ungültiger Werte durch den Nutzer und SQL-Injection Attacken. Anfragen an das Backend hingegen
+	      werden im Moment nicht validiert, was potentiell zu Sicherheitslücken führen kann. Die Implementierung dieser Validierungen ist mit verhältnismäßig geringem Aufwand
+	      verbunden, es besteht jedoch das Risiko, dass nicht alle Fälle abgedeckt werden. Des Weiteren ist es im produktiven Einsatz wichtig, Techniken wie Ratelimiting zu
+	      implementieren, um DDOS Attacken vorzubeugen.
+
+	\item \textbf{Nutzersystem:}
+	      Im Moment funktioniert Shroomscout weitestgehend anonym; ein Nutzer muss sich also nicht authentifizieren, um die Software zu nutzen. Dies hat einige Vorteile,
+	      nicht zuletzt die vereinfachte Umsetzung von Datenschutzrichtlinien bei minimaler Erhebung von Nutzerdaten. Jedoch bringt die Implementierung eines Nutzersystems
+	      viele Vorteile mit sich. Nutzer könnten Präferenzen oder Filter speichern und eine zwingende Registrierung zur Nutzung der Anwendung kann Helfen, Missbrauch der
+	      Plattform zu verhindern.
+
+	\item \textbf{Reimplementierung des Backendcodes:}
+	      Das Backend wurde in Python implementiert, maßgebliche Kriterien für diese Entscheidung waren die Einfachheit und das breite Angebot von Ressourcen für die
+	      Programmiersprache. Python ist jedoch, verglichen mit anderen Programmiersprachen, nicht sehr performant und ressourceneffizient. Daher kann es sinnvol
 
 \end{itemize}
-
-
 
 \end{document}
