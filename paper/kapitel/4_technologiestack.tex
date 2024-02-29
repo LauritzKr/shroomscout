@@ -36,9 +36,23 @@ und die Möglichkeit, das Backend ausgiebig mithilfe von Dummy-Testdaten zu test
 
 \subsection{Datenbankloesung} % Tim
 
+Eine Datenbanklösung spielt für eine Webanwendung eine zentrale Rolle in der Verwaltung, Speicherung und Abfrage von Daten, die für die Funktion und den Betrieb der Anwendung entscheidend sind. 
+Sie dient als Rückgrat für die Datenspeicherung, indem sie einen strukturierten und effizienten Mechanismus zur Datenhaltung bietet. 
+Dies ermöglicht es, große Mengen von Daten systematisch zu organisieren, zu verwalten und zugänglich zu machen.
+
 \subsubsection{SQLite}
 
+SQLite ist eine weit verbreitete, in C geschriebene Bibliothek, die ein kompaktes, selbstgenügsames, hochzuverlässiges und vollständiges SQL-Datenbanksystem bietet. 
+Als eingebettete Datenbanksoftware ermöglicht SQLite die Speicherung von Daten in einer lokalen Datei, wodurch die Notwendigkeit eines separaten Servers entfällt.
+Diese Eigenschaft macht SQLite optimal für kollaborative Software Entwicklung.
+
 \subsubsection{Tabellenstruktur}
+
+Die Datenbank für Shroomscout besteht aus 2 Tabellen, findLog und mushrooms.
+Die Tabelle findLog enthält alle Pilzfunde, sie besitzt die Spalten: id, mushroom, latitude, longitude und Environment, die id wird automatisch vergeben. 
+Die restlichen Daten werden durch Nutzer, durch ausfüllen der Eingabemaske und setzen des Marker durch klicken auf die Karte eingegeben.
+Die Tabelle mushrooms enthält die Spalten id, name und scientificName. Die id wird erneut automatisch vergeben, Name und wissenschaftlicher Name des Pilz werden manuell in die Datenbank eingepflegt.
+
 
 \subsection{Backend Technologien} % Tim
 
