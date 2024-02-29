@@ -70,6 +70,41 @@ und eine intuitive, effiziente und ansprechende Benutzererfahrung bietet.
 
 \subsection{Funktionale Anforderungen} % Tim
 
+Funktionale Anforderungen definieren die spezifischen Verhaltensweisen und Funktionen, die ein Softwaresystem oder eine Anwendung ausführen muss, um die festgelegten Ziele und Bedürfnisse der Stakeholder zu erfüllen. 
+Diese Anforderungen beschreiben detailliert, was das System tun soll, einschließlich der Prozesse, Datenmanipulationen, Benutzerinteraktionen und anderer erforderlicher Funktionen. 
+Sie sind essentiell für die Entwicklung und Validierung eines Softwaresystems, da sie eine grundlegende Rolle in der Spezifikation der Softwarearchitektur und -design spielen und als Maßstab für die Überprüfung der Systemleistung und -funktionalität dienen. 
+Funktionale Anforderungen müssen präzise, eindeutig, messbar, verifizierbar und realisierbar formuliert sein, um eine effektive Implementierung und Bewertung der Software zu gewährleisten. 
+In der Literatur werden sie oft im Kontext von Anforderungsanalyse und Systemspezifikation diskutiert, um die Brücke zwischen den initialen Benutzerbedürfnissen und der technischen Umsetzung zu schlagen.
+Einige Funktionale Anforderungen an Shroomscout sind im Folgenden aufgeführt:
+
+\begin{itemize}
+
+	\item \textbf{Registrieren eines Pilzfunds}
+	      Der User muss die Möglichkeit haben einen neuen Pilzfund, über eine Eingabemaske im Frontend zu registrieren.
+		  Diese Eingabemaske soll eine automatische Vervollständigung der Eingabe anbieten und soll bereits validieren ob die Eingabe einem gültigen
+		  Wert entspricht. Die in die Eingabemaske einzugebenden Daten sind die Art des Pilzes sowie die Umgebung in der er gefunden wurde.
+		  Erst wenn ein Marker für den Standort auf der Karte gesetzt und sowohl für Art und Umgebung des Pilzes valide Werte eingetragen wurden, soll es 
+		  möglich sein den Eintrag zu speichern, davor soll der Button zum registrieren ausgegraut sein.
+
+	\item \textbf{Anzeigen eines Live Feeds}
+	      Es soll auf der Startseite einen Livefeed geben in dem die letzten Pilzfunde geben. 
+		  Aus dem Livefeed sollen Art und Umgebung der zuletzt registrierten Pilze hervorgehen
+
+	\item \textbf{Anzeige der registrierten Pilze}
+		  Die registrierten Pilze sollen auf einer Openstreetmap Karte als Marker angezeigt werden.
+		  Wenn die Marker angeklickt werden sollen zusätzliche Informationen wie die Art des Pilzes angezeigt werden.
+	      
+
+	\item \textbf{Navbar}
+	      Die Navbar soll die Navigation der Seite ermöglichen und die Möglichkeit bieten, die Eingabemaske zum Registrieren eines Pilzes zu öffnen, sowie zur Startseite zurückzukehren.
+		  Die Navbar soll blau sein und am linken Bildschirmrand das Shroomscout Logo beinhalten
+
+	\item \textbf{Design}
+	      Um eine einheitliche Erfahrung zu schaffen und die Wartung zu erleichtern, sollen primär Komponenten der von Google verwalteten Angular Materials Library verwendet werden.
+
+\end{itemize}
+
+
 \subsection{Nicht-funktionale Anforderungen}
 
 Neben den funktionalen Anforderungen, die spezifische Aktionen und Verhaltensweisen des Systems beschreiben, spielen
