@@ -14,24 +14,39 @@ Das wichtigste Kriterium für gute Software ist Anforderungskonformität, im fol
 		  Wert entspricht. Die in die Eingabemaske einzugebenden Daten sind die Art des Pilzes sowie die Umgebung in der er gefunden wurde.
 		  Erst wenn ein Marker für den Standort auf der Karte gesetzt und sowohl für Art und Umgebung des Pilzes valide Werte eingetragen wurden, soll es 
 		  möglich sein den Eintrag zu speichern, davor soll der Button zum registrieren ausgegraut sein.
-    \item \textbf{}
-	\item \textbf{Anzeigen eines Live Feeds}
+    \item \textbf{Umsetzung: Registrieren eines Pilzfunds}
+          Die Eingabemaske wurde entsprechend der Anforderungen umgesetzt. 
+          Die Validation der vom User eingegeben Werte wurde mit Hilfe von Angular FormControl und der Angular Materials Komponente Autocomplete umgesetzt.
+
+	\item \textbf{Anforderung: Anzeigen eines Live Feeds}
 	      Es soll auf der Startseite einen Livefeed geben in dem die letzten Pilzfunde geben. 
 		  Aus dem Livefeed sollen Art und Umgebung der zuletzt registrierten Pilze hervorgehen
 
-	\item \textbf{Anzeige der registrierten Pilze}
+    \item \textbf{Umsetzung: Anzeigen eines Live Feeds}
+          Der Live Feed wurde mit Hilfe eines Angular Services und einer Angular Materials Komponente umgesetzt. 
+
+	\item \textbf{Anforderung: Anzeige der registrierten Pilze}
 		  Die registrierten Pilze sollen auf einer Openstreetmap Karte als Marker angezeigt werden.
 		  Wenn die Marker angeklickt werden sollen zusätzliche Informationen wie die Art des Pilzes angezeigt werden.
-	      
 
-	\item \textbf{Navbar}
+	\item \textbf{Umsetzung: Anzeige der registrierten Pilze}
+		  Die registrierten Pilze werden anhand ihrer Längen und Breitendaten in der Datenbank gespeichert.
+          Beim Laden der Seite werden die Information Namen, Umgebung, Längengrad und Breitengrad von einem Angular Service beim Backend abgefragt, anschließend ans Frontend gesendet
+          und als Marker auf der Karte angezeigt.
+
+	\item \textbf{Anforderung: Navbar}
 	      Die Navbar soll die Navigation der Seite ermöglichen und die Möglichkeit bieten, die Eingabemaske zum Registrieren eines Pilzes zu öffnen, sowie zur Startseite zurückzukehren.
 		  Die Navbar soll blau sein und am linken Bildschirmrand das Shroomscout Logo beinhalten
-
-	\item \textbf{Design}
+    \item \textbf{Umsetzung: Navbar}
+	      Die Navbar wurde mit Hilfe der Angular Material Navbar Komponente implementiert und ermöglicht den Zugriff auf alle Teile des Frontends.
+          Die Navbar ist blau und beinhaltet das Shroomscout Logo am linken Bildschirmrand.
+	\item \textbf{Anforderung: Design}
 	      Um eine einheitliche Erfahrung zu schaffen und die Wartung zu erleichtern, sollen primär Komponenten der von Google verwalteten Angular Materials Library verwendet werden.
-
+    \item \textbf{Umsetzung: Design}
+          Bis auf die Karte, wurde das Design der Website ausschließlich mit Angular Components Komponenten erstellt.
 \end{itemize}
+
+\subsubsection{}
 
 \subsection{Ausblick auf zukuenftige Entwicklungen}
 Die Entwicklung einer Software ist nie endgültig abgeschlossen, es existieren stets Optimierungspotentiale und potentielle weitere Features.
