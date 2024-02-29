@@ -1,7 +1,9 @@
+// Normal CSS styles
 .main-container {
   display: flex;
 }
 
+// Responsive CSS styles
 @media screen and (max-width: 600px) {
   .main-container {
     flex-direction: column;

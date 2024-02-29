@@ -4,13 +4,18 @@
   <!-- Name input field -->
   <mat-form-field appearance="fill">
     <mat-label>Choose an option</mat-label>
-    <input type="text"
-           placeholder="Pick one"
-           matInput
-           [formControl]="myControl"
-           [matAutocomplete]="auto">
+    <input
+      type="text"
+      placeholder="Pick one"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+    />
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
         {{ option }}
       </mat-option>
     </mat-autocomplete>
@@ -35,20 +40,14 @@
     </mat-select>
   </mat-form-field>
 
-  <!-- Preview image -->
-  <img
-    *ngIf="pictureUrl"
-    [src]="pictureUrl"
-    alt="Preview"
-    class="preview-image"
-  />
-
   <!-- Register button -->
   <button
     mat-raised-button
     color="primary"
     (click)="onRegisterClick()"
-    [disabled]="!nameFormControlIsValid() || !selectedEnvironment || !isMarkerPlaced"
+    [disabled]="
+      !nameFormControlIsValid() || !selectedEnvironment || !isMarkerPlaced
+    "
   >
     Register
   </button>

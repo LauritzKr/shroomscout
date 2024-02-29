@@ -3,8 +3,7 @@
   <!-- Display messages from component array -->
   <mat-card-content>
     <div *ngFor="let data of mushroomData$ | async">
-      <!-- <p>{{data.id}} - {{data.mushroom}} - {{data.latitude}} - {{data.longitude}} - {{data.environment}}</p> -->
-      <p>{{data.mushroom}} stand nahe einer {{data.environment}}</p>
+      <p>{{ data.mushroom }} stand nahe einer {{ data.environment }}</p>
     </div>
   </mat-card-content>
 </mat-card>

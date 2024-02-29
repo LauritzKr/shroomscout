@@ -1,8 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { MarkerService } from '../marker.service';
 import { MessageService } from '../message.service';
 import { ShroomService } from '../shroom.service';
-import { MarkerService } from '../marker.service';
-import { Marker } from 'leaflet';
 
 @Component({
   selector: 'app-live-feed',
@@ -11,18 +10,21 @@ import { Marker } from 'leaflet';
 })
 export class LiveFeedComponent implements OnInit {
   private messageService = inject(MessageService);
-  private shroomService:ShroomService = inject(ShroomService);
-  private markerService:MarkerService = inject(MarkerService);
+  private shroomService = inject(ShroomService);
+  private markerService = inject(MarkerService);
 
   protected messages$ = this.messageService.messages$;
   protected mushroomData$ = this.shroomService.data$;
 
   ngOnInit(): void {
     this.shroomService.fetchData().subscribe((mushroomData) => {
-      for(let data of mushroomData) {
-        this.markerService.addMarker(data.latitude, data.longitude, data.mushroom);
+      for (let data of mushroomData) {
+        this.markerService.addMarker(
+          data.latitude,
+          data.longitude,
+          data.mushroom
+        );
       }
     });
   }
-
 }

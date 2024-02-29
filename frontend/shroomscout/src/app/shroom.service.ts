@@ -1,15 +1,14 @@
-import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ShroomService {
-
-  private apiUrl = 'http://localhost:8080'; // Your API URL
-  private dataSubject = new BehaviorSubject<MushroomData[]>([]); // Initial empty data
+  private apiUrl = 'http://localhost:8080';
+  private dataSubject = new BehaviorSubject<MushroomData[]>([]);
   private httpClient: HttpClient = inject(HttpClient);
 
   // Method to fetch data from the server and update the state
@@ -21,20 +20,18 @@ export class ShroomService {
 
     // Otherwise, fetch the data from the server and update the state
     return this.httpClient.get<any>(`${this.apiUrl}/shrooms/finds`).pipe(
-      map(response => {
-        return response.data; 
+      map((response) => {
+        return response.data;
       }),
-      tap(data => 
-        this.dataSubject.next(data)
-      ) // Update the state with the fetched data
+      tap((data) => this.dataSubject.next(data))
     );
   }
 
   fetchMushrooms(): Observable<string[]> {
     return this.httpClient.get<any>(`${this.apiUrl}/shrooms`).pipe(
-      map(response => {
-        return response.data.map((value:any) => value.name); 
-      }),
+      map((response) => {
+        return response.data.map((value: any) => value.name);
+      })
     );
   }
 
@@ -53,13 +50,12 @@ export class ShroomService {
   get data$(): Observable<MushroomData[]> {
     return this.dataSubject.asObservable();
   }
-
-} 
+}
 
 export interface MushroomData {
-  id:number;
-  mushroom:string;
+  id: number;
+  mushroom: string;
   latitude: number;
   longitude: number;
   environment: string;
-} 
+}
