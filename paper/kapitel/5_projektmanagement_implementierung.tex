@@ -78,7 +78,7 @@ Entwicklungsprozesses bei `ShroomScout' bei und stellte eine solide Basis für e
 
 \subsubsection{Anwendung von Scrum Artefakten \& Events}
 
-Im Rahmen des `ShroomScout'-Projekts wurde eine angepasste Form der Scrum-Methodik angewendet, um die agile Entwicklung zu unterstützen. Scrum, eine der
+Im Rahmen des `ShroomScout'-Projekts wurde eine angepasste Form der Scrum-Me\-tho\-dik angewendet, um die agile Entwicklung zu unterstützen. Scrum, eine der
 prominentesten agilen Methoden, ist bekannt für seine strukturierte Herangehensweise an die Softwareentwicklung, die iterative Arbeit in Sprints, regelmäßige
 Abstimmungsmeetings und eine klare Rollenverteilung innerhalb des Teams vorsieht. Eine zentrale Komponente von Scrum sind die täglichen Stand-up-Meetings, auch
 als Daily Scrums bekannt, die dazu dienen, den Fortschritt zu überprüfen und den weiteren Arbeitsablauf effektiv zu koordinieren.
@@ -117,12 +117,12 @@ der Software. Folgende grundlegende Prinzipien des Clean Code wurden im Projekt 
 	      \begin{verbatim}
           // Schlecht
           protected t: string = 'Pilzdaten angeben:';
-          protected env: string[] = ['Wiese', 'Eiche', 'Buche'];
+          protected env: string[] = ['Wiese', 'Eiche'];
           protected sEnv: string = '';
 
           // Gut
           protected title: string = 'Pilzdaten angeben:';
-          protected environments: string[] = ['Wiese', 'Eiche', 'Buche'];
+          protected environments: string[] = ['Wiese', 'Eiche'];
           protected selectedEnvironment: string = '';
         \end{verbatim}
 
@@ -170,7 +170,7 @@ In der Softwareentwicklung ist eine strukturierte Testhierarchie essenziell, um 
 Hierarchie beginnt typischerweise mit Unit Tests, gefolgt von Integrationstests, Systemtests bis hin zu Akzeptanztests. Jede Testebene adressiert unterschiedliche
 Aspekte der Software und hilft dabei, Fehler und Probleme frühzeitig im Entwicklungsprozess zu identifizieren.
 
-Unit Tests stellen die Basis dieser Hierarchie dar und fokussieren sich auf die Überprüfung der kleinsten testbaren Teile einer Anwendung, in der Regel einzelne
+Unit Tests stellen die Basis dieser Hierarchie dar und fokussieren sich auf die Über\-prü\-fung der kleinsten testbaren Teile einer Anwendung, in der Regel einzelne
 Funktionen oder Methoden. Durch die Isolation spezifischer Codeabschnitte ermöglichen Unit Tests die Überprüfung der Funktionalität und Korrektheit einzelner
 Komponenten unabhängig vom restlichen System.
 
@@ -193,7 +193,7 @@ Für das Projekt `ShroomScout' wurde sich ausschließlich für die Implementieru
 dass umfangreichere Testformen wie Integrationstests oder Performance Tests ohne eine Produktionsumgebung und angesichts der ständigen Weiterentwicklung des
 Projekts nur begrenzten Mehrwert bieten würden. Unit Tests hingegen er\-mög\-lich\-en eine effektive und effiziente Überprüfung der Kernfunktionalitäten von
 `ShroomScout' und unterstützen eine agile Entwicklungsmethodik. Im Frontend finden sich diese Test im Ordner jeder Komponente mit dem Namen `name.component.spec.ts'.
-Die Backend Tests tragen immer den Namen `test_name.py'.
+Die Backend Tests tragen immer den Namen `test\_name.py'.
 
 Die Anwendung von Unit Tests in `ShroomScout' spielte eine zentrale Rolle in der Qua\-li\-täts\-sich\-e\-rung, indem sie die Zuverlässigkeit einzelner
 Funktionen und Methoden kontinuierlich überprüfte. Dies trug wesentlich zur Stabilität und Wartbarkeit des Projekts bei und stellte sicher, dass auch bei
